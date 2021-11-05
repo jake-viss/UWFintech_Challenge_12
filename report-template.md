@@ -2,6 +2,10 @@
 
 ## Overview of the Analysis
 
+The purpose of this analysis is to create a model that accurately predicts whether an incoming loan will inevitably be a healthy loan or whether it will be a high-risk or dangerous loan to make. 
+
+We started with a dataset that contained.
+
 In this section, describe the analysis you completed for the machine learning models used in this Challenge. This might include:
 
 * Explain the purpose of the analysis.
