@@ -1,5 +1,3 @@
-# Module 12 Report Template
-
 ## Overview of the Analysis
 
 The purpose of this analysis is to create a model that accurately predicts whether an incoming loan will inevitably be a healthy loan or whether it will be a high-risk or dangerous loan to make. 
@@ -19,35 +17,34 @@ In the loan situation, the cost of failure is most likely highest when a high-ri
 
 With all of this in mind, we used Logistic Regression to model the data and then resampled the data using a random oversampler. We compared the orignal logistic regression predictions to the oversampled logistic regression predictions to determine which model worked better. 
 
-In this section, describe the analysis you completed for the machine learning models used in this Challenge. This might include:
-
-* Explain the purpose of the analysis.
-* Explain what financial information the data was on, and what you needed to predict.
-* Provide basic information about the variables you were trying to predict (e.g., `value_counts`).
-* Describe the stages of the machine learning process you went through as part of this analysis.
-* Briefly touch on any methods you used (e.g., `LogisticRegression`, or any resampling method).
-
 ## Results
 
-Using bulleted lists, describe the balanced accuracy scores and the precision and recall scores of all machine learning models.
+Below we highlight the important metrics for both our tested models.
 
-* Machine Learning Model 1:
-  * Description of Model 1 Accuracy, Precision, and Recall scores.
 + Model 1 - Logistic Regression Model fit to the original data.
     + Accuracy Score: 95%
     + Average Precision Score: 99%
         + Healthy Loan Precision: 100%
         + High-Risk Loan Precision: 85%
+    + Average Recall Score: 99%
+        + Healthy Loan Recall: 99%
+        + High-Risk Loan Recall: 91%  
         
-
-
-* Machine Learning Model 2:
-  * Description of Model 2 Accuracy, Precision, and Recall scores.
++ Model 2 - Logistic Regression Model fit to the oversampled data.
+    + Accuracy Score: 99%
+    + Average Precision Score: 99%
+        + Healthy Loan Precision: 100%
+        + High-Risk Loan Precision: 84%
+    + Average Recall Score: 99%
+        + Healthy Loan Recall: 99%
+        + High-Risk Loan Recall: 99%
+  
 
 ## Summary
 
-Summarize the results of the machine learning models, and include a recommendation on the model to use, if any. For example:
-* Which one seems to perform best? How do you know it performs best?
-* Does performance depend on the problem we are trying to solve? (For example, is it more important to predict the `1`'s, or predict the `0`'s? )
+After comparing the performance of both models, our recomendation is to use Model 2 which uses the oversampled data to train the model. 
 
-If you do not recommend any of the models, please justify your reasoning.
+Prior to our analysis we determined that the most important thing to catch with our model was the actual high-risk loans (1's). The greatest cost to the business (regarding the loans) would be to misclassify a high-risk lendee as a healthy, good lendee. Therefore, we wanted to prioritize categorizing all the high-risk loans correctly even if that means categorizing some healthy loans incorrectly. 
+
+Both models had similar scores across the board. They both performed quite well. However, Model 2 returned a higher recall score  for the high-risk loans and this was the determining factor in recomending this model. With a 99% recall score for the high-risk loans, it means the model correctly classified virtually all of the high-risk loans. 
+
